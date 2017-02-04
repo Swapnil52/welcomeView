@@ -106,6 +106,7 @@ class welcomeView: UIView {
         let frame = CGRect(x: self.mainView.bounds.width*0.1, y: self.mainView.bounds.height*0.1, width: self.mainView.bounds.width*0.8, height: self.mainView.bounds.height*0.6)
         self.messageLabel.frame = frame
         self.messageLabel.numberOfLines = -1
+        self.messageLabel.adjustsFontSizeToFitWidth = true
         var attributedText = NSMutableAttributedString()
         if let f = UIFont(name: "Avenir Book", size: 30)
         {
