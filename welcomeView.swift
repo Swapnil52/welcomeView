@@ -25,7 +25,7 @@ class welcomeView: UIView {
     
     init(_ frame : CGRect, _ messagesArray : [String], _ backgroundColor : UIColor, _ textColor : UIColor, _ buttonColor : UIColor, _ completion : @escaping () -> Void)
     {
-
+        
         pages = messagesArray.count
         messages = messagesArray
         pageIndex = 0
@@ -36,6 +36,7 @@ class welcomeView: UIView {
         textAlignment = NSTextAlignment.center
         showShadow = true
         super.init(frame: frame)
+        self.autoresizingMask = [.flexibleRightMargin, .flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin]
         self.frame = frame
         self.messageLabel.textAlignment = .left
         presentPage(backgroundColor, textColor, buttonColor, 0)
@@ -53,7 +54,7 @@ class welcomeView: UIView {
     
     func showMainView(_ backgroundColor : UIColor, _ message : String, _ textColor : UIColor, _ buttonColor : UIColor) -> Void
     {
-
+        
         for view in self.subviews
         {
             
@@ -65,6 +66,7 @@ class welcomeView: UIView {
         self.mainView = UIView(frame: self.bounds)
         self.mainView.backgroundColor = backgroundColor
         self.mainView.layer.cornerRadius = 10
+        self.mainView.autoresizingMask = [.flexibleLeftMargin]
         if (self.showShadow == true)
         {
             
@@ -82,10 +84,10 @@ class welcomeView: UIView {
         //configure nextButton
         self.configureNextButton(buttonColor)
         
-        //animate the view from alpha 0 and 0.75X scale to alpha 1 and 1X scale 
+        //animate the view from alpha 0 and 0.75X scale to alpha 1 and 1X scale
         self.alpha = 0
         self.layer.setAffineTransform(CGAffineTransform(scaleX: 0.75, y: 0.75))
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: { 
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: {
             
             self.alpha = 1
             self.layer.setAffineTransform(CGAffineTransform.identity)
@@ -142,7 +144,7 @@ class welcomeView: UIView {
     func next()
     {
         
-        self.makeInvisible { 
+        self.makeInvisible {
             
             self.nextUtil(self.backCol, self.textCol, self.nextButtonColor, self.pageIndex)
             
@@ -161,7 +163,7 @@ class welcomeView: UIView {
     func remove()
     {
         
-        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: { 
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: [], animations: {
             
             self.alpha = 0
             self.layer.setAffineTransform(CGAffineTransform(scaleX: 0.5, y: 0.5))
@@ -196,7 +198,7 @@ class welcomeView: UIView {
         if (pageIndex == self.pages)
         {
             
-            makeInvisible({ 
+            makeInvisible({
                 
                 self.completionHandler()
                 self.removeFromSuperview()
@@ -209,7 +211,7 @@ class welcomeView: UIView {
             
             let currentMessage = self.messages[pageIndex]
             self.showMainView(backgroundColor, currentMessage, textColor, buttonColor)
-        
+            
         }
         
     }
@@ -220,11 +222,11 @@ class welcomeView: UIView {
     }
     
     /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+     // Only override draw() if you perform custom drawing.
+     // An empty implementation adversely affects performance during animation.
+     override func draw(_ rect: CGRect) {
+     // Drawing code
+     }
+     */
+    
 }
