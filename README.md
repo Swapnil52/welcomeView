@@ -1,7 +1,7 @@
 # welcomeView
 A UIView subclass to display a series of welcome messages in iOS apps
 
-###Usage
+### Usage
 - Download and add the welcomeView.swift file into your Xcode project. Remember to check 'Copy if needed' otherwise only a reference of the file will be added.
 - In your desired view controller, add an instance of welcomeView
 
@@ -29,11 +29,11 @@ var _welcomeView : welcomeView!
   self.view.addSubview(self._welcomeView)
 ```
 
-###GIF
+### GIF
 
 <img src = "http://i.giphy.com/ijxFAmo2tg6wo.gif" height = 350>
 
-###Contributors
+### Contributors
 This repository is actively maintained by Swapnil Dhanwal
 
 *swapnildhanwal@hotmail.com*
