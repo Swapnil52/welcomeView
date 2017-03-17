@@ -28,7 +28,7 @@ var _welcomeView : welcomeView!
                     
            })
   self.view.addSubview(self._welcomeView)
-```
+  ```
 
 
 
