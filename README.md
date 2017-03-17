@@ -30,6 +30,15 @@ var _welcomeView : welcomeView!
   self.view.addSubview(self._welcomeView)
 ```
 
+
+
+
+
+
+
+
+
+
 ### GIF
 
 
@@ -37,6 +46,7 @@ var _welcomeView : welcomeView!
 
 
 ### Contributors
+
 This repository is actively maintained by Swapnil Dhanwal
 
 *swapnildhanwal@hotmail.com*
