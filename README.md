@@ -29,6 +29,7 @@ var _welcomeView : welcomeView!
   self.view.addSubview(self._welcomeView)
 ```
 
+
 ### GIF
 
 <img src = "http://i.giphy.com/ijxFAmo2tg6wo.gif" height = 350>
