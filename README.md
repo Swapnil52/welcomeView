@@ -18,6 +18,7 @@ var _welcomeView : welcomeView!
   - completion : () -> Void //Completion handler called when the user taps the last 'next' button
 
   For example:
+  
   ```swift
   _welcomeView = welcomeView(CGRect(x : 0.1*self.view.bounds.width, y : 0.1*self.view.bounds.height, width : 0.8*self.view.bounds.width, height : 0.8*self.view.bounds.height), ["First message!", "Second message!"], getColor(red: 61, green: 78, blue: 245), UIColor.white, UIColor.white, {
                 
@@ -29,10 +30,11 @@ var _welcomeView : welcomeView!
   self.view.addSubview(self._welcomeView)
 ```
 
-
 ### GIF
 
+
 <img src = "http://i.giphy.com/ijxFAmo2tg6wo.gif" height = 350>
+
 
 ### Contributors
 This repository is actively maintained by Swapnil Dhanwal
